@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="utf-8">
+
+
+
+<title>BGS SIMPLE UI for Geographical Observations</title>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+<script src="js/jquery.validate.js"></script>
+
+
+<script src="js/jquery.placeholder.js"></script>
+
+
+<script src="js/jquery.form.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<script>
+
+$(function(){
+	$('#contact').validate();         
+	});
+$(function(){
+	$('#contact1').validate();         
+	});
+$(function(){
+	$('#contact2').validate();         
+	});
+$(function(){
+	$('#contact3').validate();         
+	});
+
+</script>
+</head>
+
+<body>
+
+<div id="contact-form">	
+<form id="contact" method="get" action="MainController">
+	
+	<fieldset>	
+	
+		<label for="name">Load Data</label>
+
+		<input type="hidden" name="searchvalue" value="LoadData" />
+	
+		<input type="submit" name="submit" class="button" id="submit" value="Load Data" />
+	
+	</fieldset>
+
+</form>
+
+<label >Absolutely no data validation so make sure your search criteria are perfect</label>
+
+
+<form id="contact1" method="get" action="MainController">
+
+	<fieldset>	
+		
+		<label for="name">Get data by Observation Name</label>
+		
+		<input type="text" name="name" placeholder="Observation Name" title="Provide Observation Name" class="required">
+		
+		<input type="hidden" name="searchvalue" value="name" />
+		
+		<input type="submit" name="submit" class="button" id="submit" value="Get Observation" />
+
+	</fieldset>
+
+</form>
+
+
+
+<form id="contact2" method="get" action="MainController">
+	
+	<fieldset>	
+		
+		<label for="species">Get data by Fossil Species</label>
+		
+		<input type="text" name="species" placeholder="Fossil Species" title="Provide Fossil Species Name" class="required">
+		
+		<input type="hidden" name="searchvalue" value="species" />
+		
+		<input type="submit" name="submit" class="button" id="submit" value="Get Observations" />
+	
+	</fieldset>
+
+</form>
+
+
+
+<form id="contact3" method="get" action="MainController">
+
+	<fieldset>	
+			<label for="XYValueRange">Get data from Bounding  Box</label>
+			
+			<label for="Max_X-Coordinate">Max X-Coordinate</label>
+			
+			<input type="text" name="Max_X-Coordinate" placeholder="Max X-Coordinate" title="Provide Max X-Coordinate" class="required">
+			
+			<label for="Max_Y-Coordinate">Max Y-Coordinate</label>
+			
+			<input type="text" name="Max_Y-Coordinate" placeholder="Max Y-Coordinate" title="Provide Max Y-Coordinate" class="required">
+			
+			<label for="Min_X-Coordinate">Min X-Coordinate</label>
+			
+			<input type="text" name="Min_X-Coordinate" placeholder="Min X-Coordinate" title="Provide Min X-Coordinate" class="required">
+			
+			<label for="Min_Y-Coordinate">Min Y-Coordinate</label>
+			
+			<input type="text" name="Min_Y-Coordinate" placeholder="Min Y-Coordinate" title="Provide Min Y-Coordinate" class="required">
+			
+			<input type="hidden" name="searchvalue" value="xycoordinates" />
+			
+			<input type="submit" name="submit" class="button" id="submit" value="Get Observations" />
+	
+	</fieldset>
+
+</form>
+
+
+
+</div><!-- /end #contact-form -->
+
+
+</body>
+</html>
